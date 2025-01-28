@@ -1,0 +1,1 @@
+let resume = document.getElementById('resume-paper');
