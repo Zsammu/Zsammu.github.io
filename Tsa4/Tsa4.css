@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Slab", serif;
+}
+html, body, .container-fluid {
+    height: 100%;
+    background: url('img/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.upperContainer {
+    padding: 15px;
+}
+.logo{
+    color: white;
+    margin-left:50px;
+}
+.logo h2{
+padding-left: 10px;
+width: 400px;
+border-top-right-radius: 360px;
+border-bottom-right-radius: 10px;
+background-color: white;
+color: black;
+}
+.logo h1{
+    margin-left:20px;
+    font-size: 60px;
+    font-weight: bold;
+}
+button {
+    font-size: 18px;
+    font-weight: bold;
+}
+.lowerContainer {
+    gap: 15px;
+    margin-right: 40px;
+}
+
+.cards {
+    width: 275px;
+    height: 500px;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border: 2px solid yellow;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.cardTitle {
+    height: 75px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+.btn:hover{
+    color: white;
+    background-color: rgb(98, 98, 98);
+}
+.cardDesc {
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 175px;
+    font-size: 12.5px;
+    background-color: rgba(249, 255, 191, 0.9);
+}
+.cardDesc p{
+    width: 55%;
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.cards:hover .cardDesc {
+opacity: 0.9;
+}
+
+.cOne{
+    background: url('img/card1.jpg') no-repeat;
+    background-size: cover;
+}
+.cTwo{
+    background: url('img/card2.jpg') no-repeat;
+    background-size: cover;
+}
+.cThree{
+    background: url('img/card3.jpg') no-repeat;
+    background-size: cover;
+}
+.cFour{
+    background: url('img/card4.jpg') no-repeat;
+    background-size: cover;
+}
+
+.modalTitle{
+    grid-row: 1/9;
+    grid-column: 1/2;
+    border: 2px solid white;
+    background-color: yellow;
+    color: black;
+    font-size: 25px;
+    font-weight: bolder;
+    writing-mode: sideways-lr;
+    text-align: center;
+    align-content: center;
+}
+.modalImg{
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-row: 1/9;
+    grid-column: 2/13;
+}
+.modalRestoName{
+    font-family: "Lobster", sans-serif;
+    grid-row: 1/2;
+    grid-column: 13/25;
+    font-weight: bolder;
+    padding: 10px;
+    padding-left: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: rgb(116, 1, 1);
+}
+.modalLeftInfo{
+    grid-row: 2/4;
+    grid-column: 13/19;
+    padding: 30px;
+    padding-top: 25px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+    font-size: 12.5px;
+    border-right: 1px solid black;
+}
+.modalLeftInfo p{
+    margin-bottom: 0;
+    align-self: start;
+}
+.modalRightInfo p{
+    margin-bottom: 0;
+    align-self: start;
+}
+.modalRightInfo{
+    grid-row: 2/4;
+    grid-column: 19/25;
+    padding: 30px;
+    padding-top: 25px;
+    margin: 10px;
+    font-size: 12.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+}
+.modalRestoInfo{
+    grid-row: 4/9;
+    grid-column: 13/25;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 0;
+    font-size: 12.5px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.modalContainer.active {
+    display: grid;
+    animation: fadeIn 0.3s forwards;
+}
+.modalContainer.fadeOut {
+    animation: fadeOut 0.3s forwards;
+}
+.modalContainer {
+    position: absolute;
+    width: 1200px;
+    height: 500px;
+    background-color: white;
+    display: none;
+    font-weight: bold;
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
