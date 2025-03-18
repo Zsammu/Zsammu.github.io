@@ -64,7 +64,10 @@ button {
     font-weight: bold;
     font-size: 25px;
 }
-
+.btn:hover{
+    color: white;
+    background-color: rgb(98, 98, 98);
+}
 .cardDesc {
     display: flex;
     opacity: 0;
