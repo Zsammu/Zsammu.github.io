@@ -8,6 +8,7 @@
     const modalRestoInfo = document.querySelector(".modalRestoInfo");
     const mainMenuButton = document.getElementById("mainMenu");
     const cards = document.querySelectorAll(".cards");
+    var activeButton = null;
 
     cards.forEach(card => {
         card.addEventListener("click", () => {
@@ -104,10 +105,16 @@
     });
 
     mainMenuButton.addEventListener("click", () => {
-
+        mainMenuButton.style.border = "1px solid yellow";
         modal.classList.add("fadeOut");
         setTimeout(() => {
             modal.style.display = "none";
             modal.classList.remove("active");
         }, 300);
+    });
+
+    document.addEventListener("click", (event) => {
+        if (event.target !== mainMenuButton) {
+            mainMenuButton.style.border = "none";
+        }
     });
